@@ -32,10 +32,13 @@ export async function startWS() {
 }
 
 function generateSeekbar(currentTime: number, length: number) {
-  const totalLength = 14;
+  const barChar = "一";
+  const circleChar = "◉";
+  const totalLength = 9;
   const seekbar = (
-    "".padEnd(Math.floor((currentTime / length) * totalLength), "━") + "◉"
-  ).padEnd(totalLength, "━");
+    "".padEnd(Math.floor((currentTime / length) * totalLength), barChar) +
+    circleChar
+  ).padEnd(totalLength, barChar);
   return seekbar;
 }
 
